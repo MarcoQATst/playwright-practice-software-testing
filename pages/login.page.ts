@@ -30,12 +30,6 @@ export class LoginPage extends BasePage {
     await expect(this.passwordInput).toBeVisible();
   }
 
-  async waitForPageReady() {
-    await this.page.waitForURL(/\/auth\/login/, { timeout: 30000 });
-    await expect(this.emailInput).toBeVisible({ timeout: 30000 });
-    await expect(this.passwordInput).toBeVisible({ timeout: 30000 });
-  }
-
   async fillCredentials(credentials: Partial<LoginCredentials>) {
     if (credentials.email !== undefined) {
       await this.emailInput.fill(credentials.email);

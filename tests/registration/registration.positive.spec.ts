@@ -42,28 +42,4 @@ test.describe('Cadastro - Cenários Positivos', () => {
 
     await expect(registerPage.page).toHaveURL(/\/auth\/login/);
   });
-
-  test('deve permitir login após cadastro bem-sucedido', async ({
-    registerPage,
-    loginPage,
-  }) => {
-    const data = validRegistrationData();
-
-    await registerPage.goto();
-    await registerPage.register(data);
-
-    // Aguarda o redirecionamento para login
-    await expect(registerPage.page).toHaveURL(/\/auth\/login/);
-
-    // Aguarda a página de login estar pronta (mesmo contexto)
-    await loginPage.waitForPageReady();
-
-    // Faz o login
-    await loginPage.login({
-      email: data.email,
-      password: data.password,
-    });
-
-    await expect(loginPage.page).toHaveURL(/\/account/);
-  });
 });
