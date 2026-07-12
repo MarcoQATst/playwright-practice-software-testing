@@ -24,15 +24,9 @@ export const test = base.extend<AuthFixtures>({
     await use(new RegisterPage(page));
   },
 
-  registeredUser: async ({ registerPage }, use) => {
-    const email = generateUniqueEmail('registered');
-    const password = defaultPassword;
-    const data = validRegistrationData(email);
-
-    await registerPage.goto();
-    await registerPage.register(data);
-    await registerPage.page.waitForURL('**/auth/login', { timeout: 25000 });
-
+  registeredUser: async ({}, use) => {
+    const email = 'customer@practicesoftwaretesting.com';
+    const password = 'welcome01';
     await use({ email, password });
   },
 });
