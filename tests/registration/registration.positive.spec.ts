@@ -12,7 +12,7 @@ test.describe('Cadastro - Cenários Positivos', () => {
     await registerPage.goto();
     await registerPage.register(data);
 
-    await expect(registerPage.page).toHaveURL(/\/auth\/login/, { timeout: 15000 });
+    await expect(registerPage.page).toHaveURL(/\/auth\/login/);
   });
 
   test('deve acessar tela de cadastro a partir da tela de login', async ({
@@ -22,6 +22,7 @@ test.describe('Cadastro - Cenários Positivos', () => {
   }) => {
     await homePage.goto();
     await homePage.openSignIn();
+
     await loginPage.openRegister();
 
     await expect(registerPage.page).toHaveURL(/\/auth\/register/);
@@ -29,26 +30,37 @@ test.describe('Cadastro - Cenários Positivos', () => {
     await expect(registerPage.submitButton).toBeVisible();
   });
 
-  test('deve aceitar data de nascimento no formato YYYY-MM-DD', async ({ registerPage }) => {
+  test('deve aceitar data de nascimento no formato YYYY-MM-DD', async ({
+    registerPage,
+  }) => {
     const data = validRegistrationData();
+
     data.dateOfBirth = '1990-12-25';
 
     await registerPage.goto();
     await registerPage.register(data);
 
-    await expect(registerPage.page).toHaveURL(/\/auth\/login/, { timeout: 15000 });
+    await expect(registerPage.page).toHaveURL(/\/auth\/login/);
   });
 
-  test('deve permitir login após cadastro bem-sucedido', async ({ registerPage, loginPage }) => {
+  test('deve permitir login após cadastro bem-sucedido', async ({
+    registerPage,
+    loginPage,
+  }) => {
     const data = validRegistrationData();
 
     await registerPage.goto();
     await registerPage.register(data);
-    await expect(registerPage.page).toHaveURL(/\/auth\/login/, { timeout: 15000 });
 
-    await loginPage.goto();
-    await loginPage.login({ email: data.email, password: data.password });
+    // Aguarda o redirecionamento para login
+    await expect(registerPage.page).toHaveURL(/\/auth\/login/);
 
-    await expect(loginPage.page).toHaveURL(/\/account/, { timeout: 15000 });
+    // Usa a página atual, sem nova navegação
+    await loginPage.login({
+      email: data.email,
+      password: data.password,
+    });
+
+    await expect(loginPage.page).toHaveURL(/\/account/);
   });
 });

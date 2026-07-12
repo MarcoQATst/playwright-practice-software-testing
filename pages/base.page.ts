@@ -1,22 +1,15 @@
-import { type Locator, type Page } from '@playwright/test';
+import { Page } from '@playwright/test';
 
-export abstract class BasePage {
-  constructor(readonly page: Page) {}
+export class BasePage {
+  protected page: Page;
 
-  protected async visit(path: string) {
-    const currentUrl = this.page.url();
-    if (!currentUrl.includes(path)) {
-      await this.page.goto(path);
-    } else {
-      await this.page.waitForLoadState('networkidle');
-    }
+  constructor(page: Page) {
+    this.page = page;
   }
 
-  async reload() {
-    await this.page.reload();
-  }
-
-  visibleText(text: string): Locator {
-    return this.page.getByText(text, { exact: true });
+  async visit(path: string) {
+    await this.page.goto(path, {
+      waitUntil: 'domcontentloaded'
+    });
   }
 }
