@@ -4,7 +4,10 @@ export abstract class BasePage {
   constructor(readonly page: Page) {}
 
   protected async visit(path: string) {
-    await this.page.goto(path);
+    const currentUrl = this.page.url();
+    if (!currentUrl.includes(path)) {
+      await this.page.goto(path);
+    }
   }
 
   async reload() {

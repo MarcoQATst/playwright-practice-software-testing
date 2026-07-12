@@ -17,10 +17,10 @@ export default defineConfig({
 
   outputDir: '.tmp/test-results',
 
-  timeout: 60_000,
+  timeout: isCI ? 90_000 : 60_000,
 
   expect: {
-    timeout: 10_000,
+    timeout: isCI ? 20_000 : 10_000,
   },
 
   fullyParallel: false,
@@ -48,9 +48,9 @@ export default defineConfig({
       height: 1080,
     },
 
-    actionTimeout: 10_000,
+    actionTimeout: isCI ? 20_000 : 10_000,
 
-    navigationTimeout: 30_000,
+    navigationTimeout: isCI ? 45_000 : 30_000,
 
     screenshot: 'only-on-failure',
 

@@ -7,9 +7,9 @@
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
     "report": "playwright show-report",
-    "allure:generate": "allure generate allure-results --clean -o allure-report",
-    "allure:open": "allure open allure-report",
-    "allure:serve": "allure serve allure-results",
+    "allure:generate": "set \"JAVA_HOME=C:\\Program Files\\Java\\jdk-26.0.1\" && set \"PATH=C:\\Program Files\\Java\\jdk-26.0.1\\bin;%PATH%\" && allure generate allure-results --clean -o allure-report",
+    "allure:open": "set \"JAVA_HOME=C:\\Program Files\\Java\\jdk-26.0.1\" && set \"PATH=C:\\Program Files\\Java\\jdk-26.0.1\\bin;%PATH%\" && allure open allure-report",
+    "allure:serve": "set \"JAVA_HOME=C:\\Program Files\\Java\\jdk-26.0.1\" && set \"PATH=C:\\Program Files\\Java\\jdk-26.0.1\\bin;%PATH%\" && allure serve allure-results",
     "codegen": "playwright codegen"
   },
   "keywords": [

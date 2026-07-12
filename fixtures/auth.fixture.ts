@@ -31,7 +31,7 @@ export const test = base.extend<AuthFixtures>({
 
     await registerPage.goto();
     await registerPage.register(data);
-    await registerPage.page.waitForURL('**/auth/login', { timeout: 15000 });
+    await registerPage.page.waitForURL('**/auth/login', { timeout: 25000 });
 
     await use({ email, password });
   },
