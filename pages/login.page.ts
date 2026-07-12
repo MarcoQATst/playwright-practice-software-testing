@@ -31,6 +31,7 @@ export class LoginPage extends BasePage {
   }
 
   async waitForPageReady() {
+    await this.page.waitForURL(/\/auth\/login/, { timeout: 30000 });
     await expect(this.emailInput).toBeVisible({ timeout: 30000 });
     await expect(this.passwordInput).toBeVisible({ timeout: 30000 });
   }
@@ -46,7 +47,8 @@ export class LoginPage extends BasePage {
   }
 
   async submit() {
-    await expect(this.submitButton).toBeEnabled();
+    await this.submitButton.waitFor({ state: 'visible', timeout: 30000 });
+    await expect(this.submitButton).toBeEnabled({ timeout: 30000 });
     await this.submitButton.click();
   }
 
