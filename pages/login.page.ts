@@ -32,10 +32,12 @@ export class LoginPage extends BasePage {
 
   async fillCredentials(credentials: Partial<LoginCredentials>) {
     if (credentials.email !== undefined) {
+      await this.emailInput.waitFor({ state: 'visible', timeout: 30000 });
       await this.emailInput.fill(credentials.email);
     }
 
     if (credentials.password !== undefined) {
+      await this.passwordInput.waitFor({ state: 'visible', timeout: 30000 });
       await this.passwordInput.fill(credentials.password);
     }
   }
