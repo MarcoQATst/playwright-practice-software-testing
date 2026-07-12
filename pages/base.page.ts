@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
 export class BasePage {
   protected page: Page;
@@ -11,5 +11,9 @@ export class BasePage {
     await this.page.goto(path, {
       waitUntil: 'domcontentloaded'
     });
+  }
+
+  visibleText(text: string): Locator {
+    return this.page.getByText(text, { exact: true });
   }
 }

@@ -1,8 +1,12 @@
 {
   "config": {
-    "argv": [],
-    "configFile": "D:\\playwright test\\playwright.config.ts",
-    "rootDir": "D:/playwright test/tests",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\marco\\scoop\\buckets\\copilot-worktrees\\playwright-practice-software-testing\\marcoqatst-refactored-potato\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\marco\\scoop\\buckets\\copilot-worktrees\\playwright-practice-software-testing\\marcoqatst-refactored-potato\\playwright.config.ts",
+    "rootDir": "C:/Users/marco/scoop/buckets/copilot-worktrees/playwright-practice-software-testing/marcoqatst-refactored-potato/tests",
     "failOnFlakyTests": false,
     "forbidOnly": false,
     "fullyParallel": false,
@@ -13,20 +17,20 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "D:/playwright test/.tmp/test-results",
+        "outputDir": "C:/Users/marco/scoop/buckets/copilot-worktrees/playwright-practice-software-testing/marcoqatst-refactored-potato/.tmp/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "D:/playwright test/tests",
+        "testDir": "C:/Users/marco/scoop/buckets/copilot-worktrees/playwright-practice-software-testing/marcoqatst-refactored-potato/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -53,7 +57,7 @@
         }
       ],
       [
-        "D:\\playwright test\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        "C:\\Users\\marco\\scoop\\buckets\\copilot-worktrees\\playwright-practice-software-testing\\marcoqatst-refactored-potato\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
         {
           "outputFolder": "allure-results"
         }
@@ -66,12 +70,845 @@
     "shard": null,
     "tags": [],
     "updateSnapshots": "missing",
-    "updateSourceMethod": "3way",
+    "updateSourceMethod": "patch",
     "version": "1.61.1",
     "workers": 6,
     "webServer": null
   },
   "suites": [
+    {
+      "title": "login\\login.negative.spec.ts",
+      "file": "login/login.negative.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login - Cenários Negativos",
+          "file": "login/login.negative.spec.ts",
+          "line": 15,
+          "column": 6,
+          "specs": [
+            {
+              "title": "deve exibir erros ao submeter formulário vazio",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20888,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:14:57.912Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "da7ca691d8d0e6ae9dc2-756b65d2db980df3c9f9",
+              "file": "login/login.negative.spec.ts",
+              "line": 16,
+              "column": 7
+            },
+            {
+              "title": "deve rejeitar e-mail com formato inválido",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13390,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:19.691Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "da7ca691d8d0e6ae9dc2-5ed14a79910d4efa3d15",
+              "file": "login/login.negative.spec.ts",
+              "line": 26,
+              "column": 7
+            },
+            {
+              "title": "deve rejeitar login com senha incorreta",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11686,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:33.278Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "da7ca691d8d0e6ae9dc2-a719439adf709fc6e9dd",
+              "file": "login/login.negative.spec.ts",
+              "line": 34,
+              "column": 7
+            },
+            {
+              "title": "deve rejeitar login com usuário inexistente",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9750,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:45.076Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "da7ca691d8d0e6ae9dc2-aaa58e0bd4992ceddbb5",
+              "file": "login/login.negative.spec.ts",
+              "line": 45,
+              "column": 7
+            },
+            {
+              "title": "deve exigir preenchimento do e-mail",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3762,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:54.973Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "da7ca691d8d0e6ae9dc2-7e60a40ebf091f738019",
+              "file": "login/login.negative.spec.ts",
+              "line": 55,
+              "column": 7
+            },
+            {
+              "title": "deve exigir preenchimento da senha",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2475,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:58.822Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "da7ca691d8d0e6ae9dc2-f5d098a74a82af2dea7b",
+              "file": "login/login.negative.spec.ts",
+              "line": 62,
+              "column": 7
+            },
+            {
+              "title": "deve manter usuário na tela de login após falha de autenticação",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1985,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:16:01.350Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "da7ca691d8d0e6ae9dc2-c037cf42be617c32d1dc",
+              "file": "login/login.negative.spec.ts",
+              "line": 69,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "login\\login.positive.spec.ts",
+      "file": "login/login.positive.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login - Cenários Positivos",
+          "file": "login/login.positive.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "deve autenticar usuário com credenciais válidas",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 22776,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:14:57.141Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2640ac28144ef1350cdd-cc5c374bd19cc19503a8",
+              "file": "login/login.positive.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "deve acessar tela de login a partir da home",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 14328,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:21.430Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2640ac28144ef1350cdd-f906ab44b59d0b1a2f8f",
+              "file": "login/login.positive.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "deve exibir link para cadastro na tela de login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 9105,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:35.962Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2640ac28144ef1350cdd-cc09e19a31998959a724",
+              "file": "login/login.positive.spec.ts",
+              "line": 23,
+              "column": 7
+            },
+            {
+              "title": "deve manter sessão após login bem-sucedido",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 11284,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:45.303Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2640ac28144ef1350cdd-45364a1cb13800cc0fc8",
+              "file": "login/login.positive.spec.ts",
+              "line": 30,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "registration\\registration.negative.spec.ts",
+      "file": "registration/registration.negative.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Cadastro - Cenários Negativos",
+          "file": "registration/registration.negative.spec.ts",
+          "line": 21,
+          "column": 6,
+          "specs": [
+            {
+              "title": "deve exibir erros ao submeter formulário vazio",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 21362,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:14:57.882Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-ca1873f95ded26a904fd",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 22,
+              "column": 7
+            },
+            {
+              "title": "deve rejeitar data de nascimento no formato YYYYMMDD",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 17678,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:20.112Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-6245d61b6ff38c2c6082",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 43,
+              "column": 7
+            },
+            {
+              "title": "deve rejeitar data de nascimento no formato YYYY/MM/DD",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 8348,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:37.895Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-62984b387d05646f1a95",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 54,
+              "column": 7
+            },
+            {
+              "title": "deve exigir preenchimento do primeiro nome",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 11984,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:46.377Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-85f52a181c429b987a99",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 65,
+              "column": 7
+            },
+            {
+              "title": "deve exigir preenchimento do sobrenome",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3612,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:15:58.427Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-68715e4bc9d16d3ddd90",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 75,
+              "column": 7
+            },
+            {
+              "title": "deve exigir seleção do país",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2513,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:16:02.073Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-46577c71fe98d4ecd3a5",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 85,
+              "column": 7
+            },
+            {
+              "title": "deve rejeitar e-mail com formato inválido",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2758,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:16:04.615Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-ddac10218168321b6e86",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 95,
+              "column": 7
+            },
+            {
+              "title": "deve rejeitar senha com menos de 6 caracteres",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1911,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:16:07.393Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-cdf13c6247abfffa9efe",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 106,
+              "column": 7
+            },
+            {
+              "title": "deve rejeitar senha sem caracteres especiais válidos",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2493,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:16:09.328Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-1748164eb425a6d261bb",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 116,
+              "column": 7
+            },
+            {
+              "title": "deve rejeitar senha comprometida em vazamento de dados",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3177,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:16:11.841Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-cbe5a8fc00d7503fc467",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 126,
+              "column": 7
+            },
+            {
+              "title": "deve rejeitar cadastro com e-mail já existente",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3596,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:16:15.036Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-e616475d5538a6ca4ecd",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 136,
+              "column": 7
+            },
+            {
+              "title": "deve manter usuário na tela de cadastro após falha de validação",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1487,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T02:16:18.650Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cde8a292d9ac13b885a1-a1d2d99b411643e1b1e8",
+              "file": "registration/registration.negative.spec.ts",
+              "line": 145,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
     {
       "title": "registration\\registration.positive.spec.ts",
       "file": "registration/registration.positive.spec.ts",
@@ -98,15 +935,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 11299,
+                      "duration": 21811,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-12T01:56:42.432Z",
+                      "startTime": "2026-07-12T02:14:57.874Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -132,15 +969,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 3149,
+                      "duration": 11637,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-12T01:56:55.064Z",
+                      "startTime": "2026-07-12T02:15:20.495Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -166,15 +1003,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 7422,
+                      "duration": 10845,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-12T01:56:58.229Z",
+                      "startTime": "2026-07-12T02:15:32.230Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -200,15 +1037,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 5364,
+                      "duration": 14205,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-12T01:57:05.669Z",
+                      "startTime": "2026-07-12T02:15:43.598Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -228,9 +1065,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-07-12T01:56:41.322Z",
-    "duration": 30051.657000000007,
-    "expected": 4,
+    "startTime": "2026-07-12T02:14:51.867Z",
+    "duration": 88676.042,
+    "expected": 27,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

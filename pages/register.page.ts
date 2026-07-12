@@ -30,9 +30,11 @@ export class RegisterPage extends BasePage {
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
   readonly submitButton: Locator;
+  readonly page: Page;
 
   constructor(page: Page) {
     super(page);
+    this.page = page;
     this.firstNameInput = page.getByLabel('First name');
     this.lastNameInput = page.getByLabel('Last name');
     this.dateOfBirthInput = page.getByLabel(/^Date of Birth(?: \*)?$/);

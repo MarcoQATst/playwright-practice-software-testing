@@ -11,9 +11,11 @@ export class LoginPage extends BasePage {
   readonly passwordInput: Locator;
   readonly submitButton: Locator;
   readonly registerLink: Locator;
+  readonly page: Page;
 
   constructor(page: Page) {
     super(page);
+    this.page = page;
 
     this.emailInput = page.getByLabel(/^Email address(?: \*)?$/);
     this.passwordInput = page.getByLabel(/^Password(?: \*)?$/);
