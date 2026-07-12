@@ -55,7 +55,10 @@ test.describe('Cadastro - Cenários Positivos', () => {
     // Aguarda o redirecionamento para login
     await expect(registerPage.page).toHaveURL(/\/auth\/login/);
 
-    // Usa a página atual, sem nova navegação
+    // Aguarda a página de login estar pronta (mesmo contexto)
+    await loginPage.waitForPageReady();
+
+    // Faz o login
     await loginPage.login({
       email: data.email,
       password: data.password,
