@@ -1,32 +1,91 @@
 # Practice Software Testing - Playwright
 
-Projeto de automação E2E com Playwright e TypeScript para validar fluxos de cadastro e login no site [Practice Software Testing](https://practicesoftwaretesting.com).
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
-## Objetivo
+Projeto de automação de testes End-to-End utilizando **Playwright + TypeScript** para validar fluxos críticos da aplicação **Practice Software Testing**.
 
-Demonstrar boas práticas de automação para portfólio QA, usando Page Object Model, fixtures reutilizáveis, massa de dados centralizada e configuração por variáveis de ambiente.
+O objetivo deste projeto é demonstrar boas práticas de automação de testes, organização de código e integração contínua utilizando ferramentas utilizadas no mercado.
 
-## Tecnologias
+---
+
+# Objetivo
+
+Automatizar cenários de negócio da aplicação, aplicando:
+
+- Page Object Model (POM)
+- Fixtures reutilizáveis
+- Massa de dados centralizada
+- Configuração por variáveis de ambiente
+- Relatórios de execução
+- Integração contínua via GitHub Actions
+
+---
+
+# Tecnologias utilizadas
 
 - Playwright
 - TypeScript
 - Node.js
 - GitHub Actions
+- Allure Report
+- Git
 
-## Estrutura
+---
+
+# Arquitetura do projeto
+
+O projeto utiliza o padrão **Page Object Model (POM)** para separar responsabilidades e facilitar a manutenção dos testes.
 
 ```text
-data/                  Massa de dados e mensagens esperadas
-fixtures/              Fixtures customizadas do Playwright
-pages/                 Page Objects das telas testadas
-tests/login/           Cenários de login
-tests/registration/    Cenários de cadastro
-playwright.config.ts   Configuração global do Playwright
+.
+├── data/                  Massa de dados e mensagens esperadas
+├── fixtures/              Fixtures customizadas do Playwright
+├── pages/                 Page Objects das telas
+├── tests/
+│   ├── login/             Cenários de autenticação
+│   └── registration/      Cenários de cadastro
+├── reports/               Relatórios de execução
+├── playwright.config.ts   Configuração global do Playwright
+└── .github/
+    └── workflows/         Pipelines CI/CD
 ```
 
-## Configuração
+---
 
-Crie o arquivo `.env` a partir do exemplo:
+# Configuração do ambiente
+
+Clone o projeto:
+
+```bash
+git clone https://github.com/MarcoQATst/playwright-practice-software-testing.git
+```
+
+Acesse a pasta:
+
+```bash
+cd playwright-practice-software-testing
+```
+
+Instale as dependências:
+
+```bash
+npm ci
+```
+
+Instale os navegadores do Playwright:
+
+```bash
+npx playwright install
+```
+
+---
+
+# Variáveis de ambiente
+
+Crie o arquivo `.env` baseado no exemplo:
 
 ```bash
 cp .env.example .env
@@ -41,50 +100,110 @@ TEST_USER_PASSWORD=Teste@010203
 PLAYWRIGHT_WORKERS=1
 ```
 
-O arquivo `.env` não deve ser enviado para o GitHub. Use `.env.example` como referência pública.
+O arquivo `.env` contém informações locais e não deve ser enviado ao GitHub.
 
-## Como executar
+---
 
-Instale as dependências:
+# Execução dos testes
 
-```bash
-npm ci
-```
-
-Instale os navegadores do Playwright:
-
-```bash
-npx playwright install
-```
-
-Execute a suíte:
+Executar testes:
 
 ```bash
 npm test
 ```
 
-Execute com navegador visível:
+Executar testes com navegador visível:
 
 ```bash
 npm run test:headed
 ```
 
-Abra o relatório HTML:
+Executar em modo UI:
+
+```bash
+npm run test:ui
+```
+
+---
+
+# Relatórios
+
+O projeto possui integração com:
+
+- Playwright HTML Report
+- Allure Report
+
+Gerar relatório HTML:
 
 ```bash
 npm run report
 ```
 
-## Cenários cobertos
+Gerar relatório Allure:
 
-- Cadastro com dados válidos
-- Validações obrigatórias do formulário de cadastro
-- Validação de formatos inválidos de data, e-mail e senha
-- Bloqueio de cadastro com e-mail já existente
-- Login com credenciais válidas
-- Validações negativas de autenticação
-- Persistência de sessão após login
+```bash
+npm run allure:generate
+```
 
-## Integração contínua
+Abrir relatório Allure:
 
-O workflow em `.github/workflows/playwright.yml` executa os testes em pushes e pull requests para `main` e `master`, salvando o relatório HTML como artefato.
+```bash
+npm run allure:open
+```
+
+---
+
+# Cenários automatizados
+
+## Registration
+
+- Cadastro realizado com sucesso
+- Validação de campos obrigatórios
+- Validação de formatos inválidos
+- Validação de senha inválida
+- Bloqueio de cadastro utilizando e-mail existente
+
+## Authentication
+
+- Login realizado com sucesso
+- Login utilizando senha inválida
+- Login utilizando usuário inexistente
+- Validação das mensagens de erro
+- Persistência da sessão após autenticação
+
+---
+
+# Boas práticas aplicadas
+
+- Page Object Model
+- Fixtures reutilizáveis
+- Código organizado por responsabilidade
+- Locators estáveis do Playwright
+- Massa de dados separada dos testes
+- Configuração utilizando variáveis de ambiente
+- Evidências automáticas em falhas
+- Execução automatizada via CI/CD
+
+---
+
+# Integração contínua
+
+O projeto possui pipeline utilizando **GitHub Actions**.
+
+A execução automática ocorre em:
+
+- Push na branch main
+- Pull Requests para main/master
+
+O pipeline executa os testes e disponibiliza os relatórios como artefatos da execução.
+
+---
+
+# Autor
+
+**Marco Aurélio Gomes**
+
+QA Engineer | Test Automation
+
+Tecnologias:
+Playwright | TypeScript | Selenium | Cypress | API Testing
