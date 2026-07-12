@@ -1,81 +1,78 @@
-# Practice Software Testing - Playwright
+# Playwright Test Automation Framework
 
-![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+**Playwright • TypeScript • Node.js • GitHub Actions**
 
-Projeto de automação de testes End-to-End utilizando **Playwright + TypeScript** para validar fluxos críticos da aplicação **Practice Software Testing**.
+An end-to-end (E2E) test automation framework built with **Playwright** and **TypeScript** to validate critical user flows of the **Practice Software Testing** application.
 
-O objetivo deste projeto é demonstrar boas práticas de automação de testes, organização de código e integração contínua utilizando ferramentas utilizadas no mercado.
+This project demonstrates test automation best practices, clean code organization, and continuous integration using industry-standard tools and technologies.
 
 ---
 
-# Objetivo
+# Project Goals
 
-Automatizar cenários de negócio da aplicação, aplicando:
+Automate key business scenarios while applying modern test automation practices, including:
 
-- Page Object Model (POM)
-- Fixtures reutilizáveis
-- Massa de dados centralizada
-- Configuração por variáveis de ambiente
-- Relatórios de execução
-- Integração contínua via GitHub Actions
-
----
-
-# Tecnologias utilizadas
-
-- Playwright
-- TypeScript
-- Node.js
-- GitHub Actions
-- Allure Report
-- Git
+* Page Object Model (POM)
+* Reusable Playwright Fixtures
+* Centralized test data management
+* Environment variable configuration
+* Automated test reporting
+* Continuous Integration with GitHub Actions
 
 ---
 
-# Arquitetura do projeto
+# Technologies
 
-O projeto utiliza o padrão **Page Object Model (POM)** para separar responsabilidades e facilitar a manutenção dos testes.
+* Playwright
+* TypeScript
+* Node.js
+* GitHub Actions
+* Allure Report
+* Git
+
+---
+
+# Project Architecture
+
+The project follows the **Page Object Model (POM)** design pattern to improve maintainability, readability, and scalability.
 
 ```text
 .
-├── data/                  Massa de dados e mensagens esperadas
-├── fixtures/              Fixtures customizadas do Playwright
-├── pages/                 Page Objects das telas
+├── data/                  Test data and expected messages
+├── fixtures/              Custom Playwright fixtures
+├── pages/                 Page Objects
 ├── tests/
-│   ├── login/             Cenários de autenticação
-│   └── registration/      Cenários de cadastro
-├── reports/               Relatórios de execução
-├── playwright.config.ts   Configuração global do Playwright
+│   ├── login/             Authentication scenarios
+│   └── registration/      Registration scenarios
+├── reports/               Test execution reports
+├── playwright.config.ts   Global Playwright configuration
 └── .github/
-    └── workflows/         Pipelines CI/CD
+    └── workflows/         CI/CD pipelines
 ```
 
 ---
 
-# Configuração do ambiente
+# Environment Setup
 
-Clone o projeto:
+### Clone the repository
 
 ```bash
 git clone https://github.com/MarcoQATst/playwright-practice-software-testing.git
 ```
 
-Acesse a pasta:
+### Navigate to the project
 
 ```bash
 cd playwright-practice-software-testing
 ```
 
-Instale as dependências:
+### Install dependencies
 
 ```bash
 npm ci
 ```
 
-Instale os navegadores do Playwright:
+### Install Playwright browsers
 
 ```bash
 npx playwright install
@@ -83,15 +80,15 @@ npx playwright install
 
 ---
 
-# Variáveis de ambiente
+# Environment Variables
 
-Crie o arquivo `.env` baseado no exemplo:
+Create a `.env` file based on the provided example:
 
 ```bash
 cp .env.example .env
 ```
 
-Variáveis disponíveis:
+Available variables:
 
 ```env
 TEST_BASE_URL=https://practicesoftwaretesting.com
@@ -100,25 +97,25 @@ TEST_USER_PASSWORD=Teste@010203
 PLAYWRIGHT_WORKERS=1
 ```
 
-O arquivo `.env` contém informações locais e não deve ser enviado ao GitHub.
+> **Note:** The `.env` file contains local configuration and should not be committed to GitHub.
 
 ---
 
-# Execução dos testes
+# Running the Tests
 
-Executar testes:
+Run all tests:
 
 ```bash
 npm test
 ```
 
-Executar testes com navegador visível:
+Run tests in headed mode:
 
 ```bash
 npm run test:headed
 ```
 
-Executar em modo UI:
+Run Playwright UI Mode:
 
 ```bash
 npm run test:ui
@@ -126,26 +123,26 @@ npm run test:ui
 
 ---
 
-# Relatórios
+# Test Reports
 
-O projeto possui integração com:
+The project integrates with:
 
-- Playwright HTML Report
-- Allure Report
+* Playwright HTML Report
+* Allure Report
 
-Gerar relatório HTML:
+Generate the Playwright HTML Report:
 
 ```bash
 npm run report
 ```
 
-Gerar relatório Allure:
+Generate the Allure Report:
 
 ```bash
 npm run allure:generate
 ```
 
-Abrir relatório Allure:
+Open the Allure Report:
 
 ```bash
 npm run allure:open
@@ -153,57 +150,64 @@ npm run allure:open
 
 ---
 
-# Cenários automatizados
+# Automated Test Coverage
 
 ## Registration
 
-- Cadastro realizado com sucesso
-- Validação de campos obrigatórios
-- Validação de formatos inválidos
-- Validação de senha inválida
-- Bloqueio de cadastro utilizando e-mail existente
+* Successful user registration
+* Required field validation
+* Invalid input validation
+* Password validation
+* Registration blocked for existing email addresses
 
 ## Authentication
 
-- Login realizado com sucesso
-- Login utilizando senha inválida
-- Login utilizando usuário inexistente
-- Validação das mensagens de erro
-- Persistência da sessão após autenticação
+* Successful login
+* Invalid password validation
+* Non-existent user validation
+* Error message validation
+* Session persistence after authentication
 
 ---
 
-# Boas práticas aplicadas
+# Best Practices Implemented
 
-- Page Object Model
-- Fixtures reutilizáveis
-- Código organizado por responsabilidade
-- Locators estáveis do Playwright
-- Massa de dados separada dos testes
-- Configuração utilizando variáveis de ambiente
-- Evidências automáticas em falhas
-- Execução automatizada via CI/CD
-
----
-
-# Integração contínua
-
-O projeto possui pipeline utilizando **GitHub Actions**.
-
-A execução automática ocorre em:
-
-- Push na branch main
-- Pull Requests para main/master
-
-O pipeline executa os testes e disponibiliza os relatórios como artefatos da execução.
+* Page Object Model (POM)
+* Reusable Playwright Fixtures
+* Clean project architecture
+* Stable Playwright locators
+* Centralized test data
+* Environment-based configuration
+* Automatic failure evidence (screenshots/traces)
+* CI/CD pipeline integration
 
 ---
 
-# Autor
+# Continuous Integration
+
+This project includes a **GitHub Actions** pipeline.
+
+The workflow is automatically triggered on:
+
+* Pushes to the **main** branch
+* Pull Requests targeting **main**
+
+The pipeline installs dependencies, executes the automated test suite, and publishes the execution reports as workflow artifacts.
+
+---
+
+# Author
 
 **Marco Aurélio Gomes**
 
-QA Engineer | Test Automation
+**QA Automation Engineer**
 
-Tecnologias:
-Playwright | TypeScript | Selenium | Cypress | API Testing
+### Technical Skills
+
+* Playwright
+* TypeScript
+* Selenium
+* Cypress
+* API Testing
+* GitHub Actions
+* Git
