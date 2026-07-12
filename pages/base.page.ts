@@ -7,6 +7,8 @@ export abstract class BasePage {
     const currentUrl = this.page.url();
     if (!currentUrl.includes(path)) {
       await this.page.goto(path);
+    } else {
+      await this.page.waitForLoadState('networkidle');
     }
   }
 

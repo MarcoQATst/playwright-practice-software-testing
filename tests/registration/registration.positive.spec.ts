@@ -1,4 +1,4 @@
-﻿import { test, expect } from '../../fixtures/auth.fixture';
+import { test, expect } from '../../fixtures/auth.fixture';
 import { validRegistrationData } from '../../data/test-data';
 
 test.describe.configure({ mode: 'serial' });
@@ -46,6 +46,7 @@ test.describe('Cadastro - Cenários Positivos', () => {
     await registerPage.register(data);
     await expect(registerPage.page).toHaveURL(/\/auth\/login/, { timeout: 15000 });
 
+    await loginPage.goto();
     await loginPage.login({ email: data.email, password: data.password });
 
     await expect(loginPage.page).toHaveURL(/\/account/, { timeout: 15000 });
