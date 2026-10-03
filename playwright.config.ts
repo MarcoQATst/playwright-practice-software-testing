@@ -11,6 +11,12 @@ if (existsSync(envFile)) {
 const isCI = !!process.env.CI;
 const baseURL =
   process.env.TEST_BASE_URL ?? 'https://practicesoftwaretesting.com';
+const configuredWorkers = Number(process.env.PLAYWRIGHT_WORKERS);
+const workers = Number.isInteger(configuredWorkers) && configuredWorkers > 0
+  ? configuredWorkers
+  : isCI
+    ? 1
+    : undefined;
 
 export default defineConfig({
   testDir: './tests',
@@ -29,7 +35,7 @@ export default defineConfig({
 
   retries: isCI ? 2 : 0,
 
-  workers: isCI ? 1 : undefined,
+  workers,
 
   reporter: [
     ['list'],

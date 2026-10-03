@@ -9,6 +9,7 @@ node_modules/
 .tmp/
 /allure-results/
 /allure-report/
+/reports/
 
 # Environment
 .env

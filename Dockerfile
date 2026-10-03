@@ -8,4 +8,6 @@ RUN npm ci
 
 COPY . .
 
+RUN npm run typecheck
+
 CMD ["npm", "test"]

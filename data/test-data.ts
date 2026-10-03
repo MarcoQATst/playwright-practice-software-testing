@@ -1,9 +1,10 @@
+import { randomUUID } from 'node:crypto';
 import { type RegistrationData } from '../pages/register.page';
 
 export function generateUniqueEmail(prefix = 'qa') {
   const domain = process.env.TEST_EMAIL_DOMAIN ?? 'teste.com';
 
-  return `${prefix}${Date.now()}@${domain}`;
+  return `${prefix}-${randomUUID()}@${domain}`;
 }
 
 export const defaultPassword = process.env.TEST_USER_PASSWORD ?? 'Teste@010203';

@@ -1,11 +1,10 @@
 import { test, expect } from '../../fixtures/auth.fixture';
 import { validRegistrationData } from '../../data/test-data';
 
-test.describe.configure({ mode: 'serial' });
-
 test.describe('Cadastro - Cenários Positivos', () => {
   test('deve cadastrar usuário com dados válidos e redirecionar para login', async ({
     registerPage,
+    loginPage,
   }) => {
     const data = validRegistrationData();
 
@@ -13,6 +12,8 @@ test.describe('Cadastro - Cenários Positivos', () => {
     await registerPage.register(data);
 
     await expect(registerPage.page).toHaveURL(/\/auth\/login/);
+    await expect(loginPage.emailInput).toBeVisible();
+    await expect(loginPage.submitButton).toBeVisible();
   });
 
   test('deve acessar tela de cadastro a partir da tela de login', async ({
@@ -32,6 +33,7 @@ test.describe('Cadastro - Cenários Positivos', () => {
 
   test('deve aceitar data de nascimento no formato YYYY-MM-DD', async ({
     registerPage,
+    loginPage,
   }) => {
     const data = validRegistrationData();
 
@@ -41,5 +43,6 @@ test.describe('Cadastro - Cenários Positivos', () => {
     await registerPage.register(data);
 
     await expect(registerPage.page).toHaveURL(/\/auth\/login/);
+    await expect(loginPage.emailInput).toBeVisible();
   });
 });

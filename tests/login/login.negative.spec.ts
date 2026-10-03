@@ -1,16 +1,6 @@
-﻿import { type Locator } from '@playwright/test';
 import { test, expect } from '../../fixtures/auth.fixture';
 import { loginValidationMessages } from '../../data/test-data';
-
-type PageWithVisibleText = {
-  visibleText: (text: string) => Locator;
-};
-
-async function expectVisibleMessages(page: PageWithVisibleText, messages: string[]) {
-  for (const message of messages) {
-    await expect(page.visibleText(message)).toBeVisible();
-  }
-}
+import { expectVisibleMessages } from '../../helpers/expect-visible-messages';
 
 test.describe('Login - Cenários Negativos', () => {
   test('deve exibir erros ao submeter formulário vazio', async ({ loginPage }) => {

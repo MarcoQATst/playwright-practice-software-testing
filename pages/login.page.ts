@@ -41,8 +41,7 @@ export class LoginPage extends BasePage {
   }
 
   async submit() {
-    await this.submitButton.waitFor({ state: 'visible', timeout: 30000 });
-    await expect(this.submitButton).toBeEnabled({ timeout: 30000 });
+    await expect(this.submitButton).toBeEnabled();
     await this.submitButton.click();
   }
 

@@ -40,6 +40,7 @@ The project follows the **Page Object Model (POM)** design pattern to improve ma
 .
 ├── data/                  Test data and expected messages
 ├── fixtures/              Custom Playwright fixtures
+├── helpers/               Shared test assertion helpers
 ├── pages/                 Page Objects
 ├── tests/
 │   ├── login/             Authentication scenarios
@@ -94,6 +95,8 @@ Available variables:
 TEST_BASE_URL=https://practicesoftwaretesting.com
 TEST_EMAIL_DOMAIN=teste.com
 TEST_USER_PASSWORD=Teste@010203
+TEST_EXISTING_USER_EMAIL=customer@practicesoftwaretesting.com
+TEST_EXISTING_USER_PASSWORD=welcome01
 PLAYWRIGHT_WORKERS=1
 ```
 
@@ -120,6 +123,31 @@ Run Playwright UI Mode:
 ```bash
 npm run test:ui
 ```
+
+Validate TypeScript without running the tests:
+
+```bash
+npm run typecheck
+```
+
+---
+
+# Running with Docker
+
+Build the image and execute the test suite with Docker Compose:
+
+```bash
+docker compose run --build --rm tests
+```
+
+After the first build, execute the existing image with:
+
+```bash
+docker compose run --rm tests
+```
+
+The Compose configuration persists the Playwright HTML report, JSON results,
+Allure results, screenshots, videos, and traces on the host machine.
 
 ---
 
@@ -192,7 +220,8 @@ The workflow is automatically triggered on:
 * Pushes to the **main** branch
 * Pull Requests targeting **main**
 
-The pipeline installs dependencies, executes the automated test suite, and publishes the execution reports as workflow artifacts.
+The pipeline builds the Docker image, executes the automated test suite in a
+container, and publishes reports and failure evidence as workflow artifacts.
 
 ---
 

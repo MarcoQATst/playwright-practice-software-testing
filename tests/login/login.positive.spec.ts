@@ -1,13 +1,12 @@
 ﻿import { test, expect } from '../../fixtures/auth.fixture';
 
-test.describe.configure({ mode: 'serial' });
-
 test.describe('Login - Cenários Positivos', () => {
   test('deve autenticar usuário com credenciais válidas', async ({ loginPage, registeredUser }) => {
     await loginPage.goto();
     await loginPage.login(registeredUser);
 
     await expect(loginPage.page).toHaveURL(/\/account/, { timeout: 15000 });
+    await expect(loginPage.page.getByRole('heading', { name: 'My account' })).toBeVisible();
   });
 
   test('deve acessar tela de login a partir da home', async ({ homePage, loginPage }) => {
@@ -35,5 +34,6 @@ test.describe('Login - Cenários Positivos', () => {
 
     await loginPage.page.reload();
     await expect(loginPage.page).toHaveURL(/\/account/, { timeout: 15000 });
+    await expect(loginPage.page.getByRole('heading', { name: 'My account' })).toBeVisible();
   });
 });

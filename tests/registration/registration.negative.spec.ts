@@ -1,22 +1,10 @@
-﻿import { type Locator } from '@playwright/test';
 import { test, expect } from '../../fixtures/auth.fixture';
 import {
   registrationValidationMessages,
   validRegistrationData,
   generateUniqueEmail,
 } from '../../data/test-data';
-
-test.describe.configure({ mode: 'serial' });
-
-type PageWithVisibleText = {
-  visibleText: (text: string) => Locator;
-};
-
-async function expectVisibleMessages(page: PageWithVisibleText, messages: string[]) {
-  for (const message of messages) {
-    await expect(page.visibleText(message)).toBeVisible();
-  }
-}
+import { expectVisibleMessages } from '../../helpers/expect-visible-messages';
 
 test.describe('Cadastro - Cenários Negativos', () => {
   test('deve exibir erros ao submeter formulário vazio', async ({ registerPage }) => {

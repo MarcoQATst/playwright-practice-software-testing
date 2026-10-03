@@ -2,7 +2,6 @@ import { test as base } from '@playwright/test';
 import { HomePage } from '../pages/home.page';
 import { LoginPage } from '../pages/login.page';
 import { RegisterPage } from '../pages/register.page';
-import { defaultPassword, generateUniqueEmail, validRegistrationData } from '../data/test-data';
 
 type AuthFixtures = {
   homePage: HomePage;
@@ -25,8 +24,9 @@ export const test = base.extend<AuthFixtures>({
   },
 
   registeredUser: async ({}, use) => {
-    const email = 'customer@practicesoftwaretesting.com';
-    const password = 'welcome01';
+    const email =
+      process.env.TEST_EXISTING_USER_EMAIL ?? 'customer@practicesoftwaretesting.com';
+    const password = process.env.TEST_EXISTING_USER_PASSWORD ?? 'welcome01';
     await use({ email, password });
   },
 });
