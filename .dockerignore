@@ -1,0 +1,10 @@
+node_modules
+.tmp
+playwright-report
+allure-results
+allure-report
+reports
+.git
+.github
+.env
+npm-debug.log*

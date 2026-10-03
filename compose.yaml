@@ -1,0 +1,12 @@
+services:
+  tests:
+    build:
+      context: .
+    image: playwright-tests
+    init: true
+    ipc: host
+    volumes:
+      - ./.tmp/test-results:/app/.tmp/test-results
+      - ./playwright-report:/app/playwright-report
+      - ./reports:/app/reports
+      - ./allure-results:/app/allure-results
